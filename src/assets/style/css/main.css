@@ -1,0 +1,100 @@
+button {
+    color: white !important;
+    margin: 3px;
+    line-height: 1 !important;
+    font-weight: 600 !important;
+    font-style: italic;
+    opacity: .4;
+}
+
+button.fire {
+    background-color: #f08030;
+}
+
+.stars {
+    opacity: 0.4;
+}
+
+.stars:hover {
+    opacity: 1;
+}
+
+.stars0-3 {
+    color: #ee9219;
+}
+
+.stars4 {
+    color: #e18079;
+}
+
+button.grass {
+    background-color: #78c850;
+}
+
+button.water {
+    background-color: #6890f0;
+}
+
+button.rock {
+    background-color: #bda55a;
+}
+
+button.ground {
+    background-color: #e0c068;
+}
+
+button.ghost {
+    background-color: #6363b5;
+}
+
+button.fairy {
+    background-color: #ee99ac;
+}
+
+button.psychic {
+    background-color: #f85888;
+}
+
+button.bug {
+    background-color: #a8b820;
+}
+
+button.poison {
+    background-color: #b55aa5;
+}
+
+button.ice {
+    background-color: #98d8d8;
+}
+
+button.steel {
+    background-color: #b8b8d0;
+}
+
+button.dragon {
+    background-color: #7038f8;
+}
+
+button.flying {
+    background-color: #6363b5;
+}
+
+button.dark {
+    background-color: #735a4a;
+}
+
+button.normal {
+    background-color: #a8a878;
+}
+
+button.fighting {
+    background-color: #c03028;    
+}
+
+button.electric {
+    background-color: #f8d030;    
+}
+
+button:hover, .opacity-1 {
+    opacity: 1;
+}

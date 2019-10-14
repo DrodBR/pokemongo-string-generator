@@ -1,0 +1,22 @@
+{
+    "types": [
+        "fighting",
+        "normal",
+        "dark",
+        "flying",
+        "dragon",
+        "steel",
+        "ice",
+        "poison",
+        "bug",
+        "fire",
+        "grass",
+        "water",
+        "ghost",
+        "ground",
+        "rock",
+        "fairy",
+        "psychic",
+        "electric"
+    ]
+}

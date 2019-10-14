@@ -1,0 +1,14 @@
+$fire-color: rgb(240, 128, 48);
+$water-color: rgb(104,144,240);
+$grass-color: rgb(120,200,80);
+$rock-color: rgb(189,165,90);
+$ground-color: rgb(224,192,104);
+$ghost-color: rgb(99,99,181);
+
+$types: fire, water, grass;
+
+@each $type in $types {
+    .button.#{$type} {
+        background-color: #{type}-color;
+    }
+}
