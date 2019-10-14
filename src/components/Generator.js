@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import dataTypes from '../data/types.json'
 import dataIVs from '../data/IVs.json'
+import { StringContext } from '../context/genContext'
 
 const Generator = () => {
 
-    const [string, setString] = useState('')
+    const { string, setString } = useContext(StringContext)
     const [type, setType] = useState([])
     const [typeSeparator, setTypeSeparator] = useState(',')
     const [selectedIVs, setSelectedIVs] = useState([])
