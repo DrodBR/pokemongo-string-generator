@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from 'react'
 import dataTypes from '../data/types.json'
 import dataIVs from '../data/IVs.json'
 import { StringContext } from '../context/genContext'
+import DisplayString from './containers/MainContent/DisplayString'
 
 const Generator = () => {
 
-    const { string, setString } = useContext(StringContext)
+    const { selectedData, setSelectedData } = useContext(StringContext)
     const [type, setType] = useState([])
     const [typeSeparator, setTypeSeparator] = useState(',')
     const [selectedIVs, setSelectedIVs] = useState([])
@@ -13,25 +14,39 @@ const Generator = () => {
     const allIVs = dataIVs.IVs
 
     useEffect(() => {
-        setString(`${type.join(typeSeparator)}${type.length > 0 && selectedIVs.length > 0 ? '&' : ''}${selectedIVs}`)
+        //setString(`${type.join(typeSeparator)}${type.length > 0 && selectedIVs.length > 0 ? '&' : ''}${selectedIVs}`)
     }, [type, typeSeparator, selectedIVs])
 
     const updateType = event => {
         if (!type.includes(event.target.value)) {
             setType([...type, event.target.value])
+            setSelectedData({...selectedData, types: selectedData.types.concat(event.target.value)}) // new data
             document.getElementById(`button-${event.target.value}`).classList.add("opacity-1")
         } else {
             setType(type.filter(el => el !== event.target.value))
+            setSelectedData({...selectedData, types: selectedData.types.filter(el => el !== event.target.value)}) // new data
             document.getElementById(`button-${event.target.value}`).classList.remove("opacity-1")
+        }
+    }
+
+    const updateTypesSeparator = event => {
+        if(event.target.checked) {
+            setTypeSeparator('&')
+            setSelectedData({...selectedData, typesSeparator: '&'})
+        } else {
+            setTypeSeparator(',')
+            setSelectedData({...selectedData, typesSeparator: ','})
         }
     }
 
     const updateStars = event => {
         if (!selectedIVs.includes(`${event.target.value}*`)) {
             setSelectedIVs([...selectedIVs, `${event.target.value}*`])
+            setSelectedData({...selectedData, IVs: selectedData.IVs.concat(event.target.value)}) // new data
             document.getElementById(`${event.target.value}stars`).classList.add("opacity-1")
         } else {
             setSelectedIVs(selectedIVs.filter(el => el !== `${event.target.value}*`))
+            setSelectedData({...selectedData, IVs: selectedData.IVs.filter(el => el !== event.target.value)}) // new data
             document.getElementById(`${event.target.value}stars`).classList.remove("opacity-1")
         }
     }
@@ -59,18 +74,20 @@ const Generator = () => {
             <div className='container text-light'>
                 <div className='row'>
                     <div className='col-sm-12'>
-                        <input type='text' className='form-control m-3' value={string} readOnly />
+                        <input type='text' className='form-control m-3' value={'string'} readOnly />
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-sm-4'>
+                        <DisplayString />
+                        {JSON.stringify(selectedData)}
                         <h1>Filter</h1>
                         <h2>Type</h2>
                         {allTypes.map((obj, index) => {
                             return <button className={`btn btn-sm ${obj}`} id={`button-${obj}`} value={obj} onClick={updateType}>{obj.toUpperCase()}</button>
                         })}
                         <div className="custom-control custom-switch m-1">
-                            <input className="custom-control-input" type="checkbox" id="typeSeparator" onClick={(e) => { e.target.checked ? setTypeSeparator('&') : setTypeSeparator(',') }} />
+                            <input className="custom-control-input" type="checkbox" id="typeSeparator" onClick={(e) => {updateTypesSeparator(e)} } />
                             <label className="custom-control-label" for="typeSeparator">
                                 Combine
                             </label>
