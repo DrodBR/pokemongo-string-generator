@@ -5,7 +5,7 @@ const PokemonSelector = () => {
     const [pokemonData, setPokemonData] = useState([])
     const { selectedData, setSelectedData } = useContext(StringContext)
     const firstPokemon = 1
-    const lastPokemon = 30
+    const lastPokemon = 15
 
     useEffect(() => {
         const fetchData = async () => {

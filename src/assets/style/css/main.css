@@ -62,9 +62,8 @@ div.pokemon-box {
 }
 
 div.pokemon-box:hover {
-    border: 3px solid darkblue;
+    border: 3px solid darkgray;
 }
-
 
 button.fire {
     background-color: #f08030;
