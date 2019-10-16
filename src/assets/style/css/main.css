@@ -7,6 +7,47 @@ button {
     opacity: .4;
 }
 
+button:hover, .opacity-1 {
+    opacity: 1;
+}
+
+span.capitalize {
+    text-transform: capitalize;
+}
+
+img.pokemon-thumb {
+    height: 60%;
+    width: 60%;
+    transition: 0.25s;
+}
+
+img.pokemon-thumb:hover {
+    height: 80%;
+    width: 80%;
+}
+
+div.pokemon-boxes {
+
+}
+
+div.pokemon-box {
+    background-color: gray;
+    width: 25%;
+    height: 25%;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+div.pokemon-box:hover {
+    width: 27%;
+    height: 27%;
+    border: 3px solid yellow;
+}
+
+
 button.fire {
     background-color: #f08030;
 }
@@ -93,8 +134,4 @@ button.fighting {
 
 button.electric {
     background-color: #f8d030;    
-}
-
-button:hover, .opacity-1 {
-    opacity: 1;
 }

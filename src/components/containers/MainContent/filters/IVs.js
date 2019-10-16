@@ -7,7 +7,6 @@ const IVs = () => {
     const allIVs = dataIVs.IVs
 
     const updateStars = event => {
-        console.log(selectedData.IVs)
         if (!selectedData.IVs.includes(`${event.target.value}*`)) {
             setSelectedData({ ...selectedData, IVs: selectedData.IVs.concat(`${event.target.value}*`) })
             document.getElementById(`${event.target.value}stars`).classList.add("opacity-1")

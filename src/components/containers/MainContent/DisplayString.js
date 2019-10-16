@@ -9,10 +9,12 @@ const DisplayString = () => {
         CreatingString(selectedData)
     }, [selectedData])
 
-    const CreatingString = ({ types, typesSeparator, IVs }) => {
+    const CreatingString = ({ types, typesSeparator, IVs, pokemons }) => {
+        const pokemonsString = `${pokemons}`
+        const IVsString = `${IVs}`
         const typesString = `${types.join(typesSeparator)}`
-        const IVsString = `${types.length > 0 && IVs.length > 0 ? '&' : ''}${IVs}`
-        setCreatedString(`${typesString}${IVsString}`)
+
+        setCreatedString([pokemonsString, IVsString, typesString].filter(Boolean).join('&'))
     }
 
     const content = (

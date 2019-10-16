@@ -8,10 +8,10 @@ const Type = () => {
 
     const updateType = event => {
         if (!selectedData.types.includes(event.target.value)) {
-            setSelectedData({...selectedData, types: selectedData.types.concat(event.target.value)}) // new data
+            setSelectedData({...selectedData, types: selectedData.types.concat(event.target.value)})
             document.getElementById(`button-${event.target.value}`).classList.add("opacity-1")
         } else {
-            setSelectedData({...selectedData, types: selectedData.types.filter(el => el !== event.target.value)}) // new data
+            setSelectedData({...selectedData, types: selectedData.types.filter(el => el !== event.target.value)})
             document.getElementById(`button-${event.target.value}`).classList.remove("opacity-1")
         }
     }
