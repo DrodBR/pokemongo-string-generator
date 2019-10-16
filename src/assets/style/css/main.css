@@ -11,40 +11,58 @@ button:hover, .opacity-1 {
     opacity: 1;
 }
 
+span.font-inner-shadow {
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 0px 2px 0px white;
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
 span.capitalize {
     text-transform: capitalize;
 }
 
 img.pokemon-thumb {
-    height: 60%;
-    width: 60%;
+    width: 85%;
     transition: 0.25s;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 3px;
 }
 
 img.pokemon-thumb:hover {
-    height: 80%;
-    width: 80%;
+    width: 100%;
 }
 
-div.pokemon-boxes {
-
+span.pokemon-name {
+    font-size: 3em;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    font-style: italic;
+    margin: auto 0;
 }
+
+span.pokemon-number {
+    font-size: 56px;
+    line-height: 50px;
+    letter-spacing: -0.114em;
+    font-weight: 900;
+   }
 
 div.pokemon-box {
     background-color: gray;
-    width: 25%;
-    height: 25%;
-    margin: 2px;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
     transition: 0.25s;
-    cursor: pointer
+    cursor: pointer;
+    margin-bottom: 5px;
 }
 
 div.pokemon-box:hover {
-    width: 27%;
-    height: 27%;
-    border: 3px solid yellow;
+    border: 3px solid darkblue;
 }
 
 
