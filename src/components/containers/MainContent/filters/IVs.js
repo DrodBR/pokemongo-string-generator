@@ -39,7 +39,7 @@ const IVs = () => {
             <h2>IV</h2>
             {allIVs.map((obj, index) => {
                 return (
-                    <div className="custom-control custom-checkbox m-1">
+                    <div key={index} className="custom-control custom-checkbox m-1">
                         <input type="checkbox" className="custom-control-input"
                             id={`${obj.stars}-star`} value={obj.stars} onClick={updateStars} />
                         <label className="custom-control-label" for={`${obj.stars}-star`}>
@@ -52,5 +52,4 @@ const IVs = () => {
     )
     return content
 }
-
 export default IVs

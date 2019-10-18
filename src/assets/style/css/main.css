@@ -11,6 +11,17 @@ button:hover, .opacity-1 {
     opacity: 1;
 }
 
+.centralize {
+    margin: auto;
+}
+
+div {
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+  }
+
 span.font-inner-shadow {
     background-color: #565656;
     color: transparent;
@@ -25,21 +36,15 @@ span.capitalize {
 }
 
 img.pokemon-thumb {
-    width: 85%;
-    transition: 0.25s;
-    background-color: white;
-    border-radius: 20px;
-    border: 1px solid black;
-    margin: 5px;
-    padding: 3px;
-}
-
-img.pokemon-thumb:hover {
-    width: 100%;
+    width: 50%;
+    border-radius: 25px;
+    /* background: radial-gradient(circle at top, darkgreen 0, green, lightgreen 100%); */
+    margin: 0 auto;
+    border: 1px solid darkgray;
 }
 
 span.pokemon-name {
-    font-size: 3em;
+    font-size: 1.7em;
     letter-spacing: 0.15em;
     font-weight: bold;
     font-style: italic;
@@ -47,22 +52,20 @@ span.pokemon-name {
 }
 
 span.pokemon-number {
-    font-size: 56px;
-    line-height: 50px;
+    font-size: 40px;
     letter-spacing: -0.114em;
     font-weight: 900;
    }
 
 div.pokemon-box {
-    background-color: gray;
-    border-radius: 10px;
+    border-radius: 50px;
     transition: 0.25s;
     cursor: pointer;
-    margin-bottom: 5px;
+    border: 3px solid transparent;
 }
 
 div.pokemon-box:hover {
-    border: 3px solid darkgray;
+    border: 3px dotted gray;
 }
 
 button.fire {
@@ -85,70 +88,70 @@ button.fire {
     color: #e18079;
 }
 
-button.grass {
+.grass {
     background-color: #78c850;
 }
 
-button.water {
+.water {
     background-color: #6890f0;
 }
 
-button.rock {
+.rock {
     background-color: #bda55a;
 }
 
-button.ground {
+.ground {
     background-color: #e0c068;
 }
 
-button.ghost {
+.ghost {
     background-color: #6363b5;
 }
 
-button.fairy {
+.fairy {
     background-color: #ee99ac;
 }
 
-button.psychic {
+.psychic {
     background-color: #f85888;
 }
 
-button.bug {
+.bug {
     background-color: #a8b820;
 }
 
-button.poison {
+.poison {
     background-color: #b55aa5;
 }
 
-button.ice {
+.ice {
     background-color: #98d8d8;
 }
 
-button.steel {
+.steel {
     background-color: #b8b8d0;
 }
 
-button.dragon {
+.dragon {
     background-color: #7038f8;
 }
 
-button.flying {
+.flying {
     background-color: #6363b5;
 }
 
-button.dark {
+.dark {
     background-color: #735a4a;
 }
 
-button.normal {
+.normal {
     background-color: #a8a878;
 }
 
-button.fighting {
+.fighting {
     background-color: #c03028;    
 }
 
-button.electric {
+.electric {
     background-color: #f8d030;    
 }

@@ -3,15 +3,18 @@ import { StringContext } from '../../../../context/genContext'
 
 const PokemonSelector = () => {
     const [pokemonData, setPokemonData] = useState([])
+    const [filteredPokemonData, setFilteredPokemonData] = useState([])
     const { selectedData, setSelectedData } = useContext(StringContext)
+    const [searchString, setSearchString] = useState('')
     const firstPokemon = 1
-    const lastPokemon = 15
+    const lastPokemon = 50
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${firstPokemon - 1}&limit=${lastPokemon - firstPokemon + 1}`)
             const data = await response.json()
             setPokemonData(data.results)
+            setFilteredPokemonData(data.results)
         }
         fetchData()
     }, [])
@@ -24,27 +27,36 @@ const PokemonSelector = () => {
         }
     }
 
+    useEffect(() => {
+        setFilteredPokemonData(pokemonData.filter(pokemon => pokemon.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1))
+    },[searchString, pokemonData])
+
     const content = (
         <>
             <h1>Pokémon</h1>
+            <input type='text' className='form-control' placeholder='search by name...' value={searchString} onChange={e => setSearchString(e.target.value)} />
             <div className='container'>
-                {pokemonData.map((obj, index) => {
-                    const pokemonNumber = (firstPokemon + index).toString().padStart(3, '0')
-                    return (
-                        <div key={index} className='row pokemon-box' onClick={() => { updatePokemonSelection(firstPokemon + index) }}>
-                            <div className='col-sm-2 text-center'>
-                                <img className='pokemon-thumb' alt={obj.name.toUpperCase()}
-                                    src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemonNumber}.png`} />
+                <div className='row'>
+                    {filteredPokemonData.map((obj, index) => {
+                        const pokemonNumber = (firstPokemon + index).toString().padStart(3, '0')
+                        return (
+                            <div key={index} className='col-sm-12 pokemon-box' onClick={() => { updatePokemonSelection(firstPokemon + index) }}>
+                                <div className='row'>
+                                    <div className='col-sm-2 centralize'>
+                                        <img className='pokemon-thumb' alt={obj.name.toUpperCase()}
+                                            src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemonNumber}.png`} />
+                                    </div>
+                                    <div className='col-sm-7 centralize'>
+                                        <span className='capitalize pokemon-name font-inner-shadow'>{obj.name}</span>
+                                    </div>
+                                    <div className='col-sm-3 centralize'>
+                                        <span className='pokemon-number font-inner-shadow'>{`#${pokemonNumber}`}</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className='col-sm-7 text-center'>
-                                <span className='capitalize pokemon-name font-inner-shadow'>{obj.name}</span>
-                            </div>
-                            <div className='col-sm-3 text-right'>
-                                <span className='pokemon-number font-inner-shadow'>{`#${pokemonNumber}`}</span>
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         </>
     )
