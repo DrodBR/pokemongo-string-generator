@@ -8,7 +8,7 @@ Intuitive and responsive string generator to fetch pokemon in POKEMON GO game mo
 * [Bootstrap](https://getbootstrap.com/) - Framework
 
 ## Demo
-Go to: Not yet.
+Go to: [https://pokemongo-string-generator.firebaseapp.com/](https://pokemongo-string-generator.firebaseapp.com/)
 
 ## Author
 Daniel F G Rodrigues
