@@ -1,7 +1,7 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from "react"
 import selectedDataModel from '../data/selectedData.json'
 
-const StringContext = createContext();
+const StringContext = createContext()
 
 const StringContextProvider = props => {
 
@@ -14,4 +14,4 @@ const StringContextProvider = props => {
     );
 };
 
-export { StringContext, StringContextProvider };
+export { StringContext, StringContextProvider }
