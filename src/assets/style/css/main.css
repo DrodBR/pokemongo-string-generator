@@ -7,6 +7,12 @@ button {
     opacity: .4;
 }
 
+div.string-container {
+    z-index: 100;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+}
+
 button:hover, .opacity-1 {
     opacity: 1;
 }
@@ -36,11 +42,10 @@ span.capitalize {
 }
 
 img.pokemon-thumb {
-    width: 50%;
+    width: 40%;
     border-radius: 25px;
     /* background: radial-gradient(circle at top, darkgreen 0, green, lightgreen 100%); */
     margin: 0 auto;
-    border: 1px solid darkgray;
 }
 
 span.pokemon-name {
@@ -58,6 +63,7 @@ span.pokemon-number {
    }
 
 div.pokemon-box {
+    margin-top: 5px;
     border-radius: 50px;
     transition: 0.25s;
     cursor: pointer;

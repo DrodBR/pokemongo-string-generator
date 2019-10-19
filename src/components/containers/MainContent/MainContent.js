@@ -10,10 +10,10 @@ const MainContent = () => {
             <div className='container text-light'>
                 <DisplayString />
                 <div className='row'>
-                    <div className='col-sm-3'>
+                    <div className='col-sm-3 mt-5'>
                         <Filters />
                     </div>
-                    <div className='col-sm-9'>
+                    <div className='col-sm-9 mt-5'>
                         <PokemonSelector />
                     </div>
                 </div>

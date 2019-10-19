@@ -20,7 +20,9 @@ const DisplayString = () => {
     const content = (
         <div className='row'>
             <div className='col-sm-12'>
-                <input type='text' className='form-control m-3' value={createdString} readOnly />
+                <div className='string-container bg-dark'>
+                    <input type='text' className='form-control mt-3' value={createdString} readOnly />
+                </div>
             </div>
         </div>
     )

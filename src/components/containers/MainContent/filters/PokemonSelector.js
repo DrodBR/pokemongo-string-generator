@@ -29,7 +29,7 @@ const PokemonSelector = () => {
                     {filteredPokemonData.slice(0, 15).map((obj, index) => {
                         const pokemonNumber = (obj.number).toString().padStart(3, '0')
                         return (
-                            <div key={index} className='col-sm-12 pokemon-box' onClick={() => { updatePokemonSelection(obj.number) }}>
+                            <div key={index} className='col-sm-12 pokemon-box' onClick={() => { updatePokemonSelection(obj.name) }}>
                                 <div className='row'>
                                     <div className='w-25 centralize'>
                                         <img className='pokemon-thumb' alt={obj.name.toUpperCase()} src={obj.sprint} />
