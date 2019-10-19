@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { StringContext } from '../../../../context/genContext'
-import { GetPokemonDBContext } from '../../../../context/getPokemonDBContext'
+import { StringContext } from '../../../../../context/genContext'
+import { GetPokemonDBContext } from '../../../../../context/getPokemonDBContext'
+import { PaginationContext } from '../../../../../context/paginationContext'
+import Pagination from './Pagination'
 
 const PokemonSelector = () => {
     const [filteredPokemonData, setFilteredPokemonData] = useState([])
+    const [searchString, setSearchString] = useState('')
     const { selectedData, setSelectedData } = useContext(StringContext)
     const { pokemonDB } = useContext(GetPokemonDBContext)
-    const [searchString, setSearchString] = useState('')
+    const { pagination } = useContext(PaginationContext)
 
     const updatePokemonSelection = number => {
         if (!selectedData.pokemons.includes(number)) {
@@ -24,9 +27,13 @@ const PokemonSelector = () => {
         <>
             <h1>Pokémon</h1>
             <input type='text' className='form-control' placeholder='search by name...' value={searchString} onChange={e => setSearchString(e.target.value)} />
+            
+            <div className='m-3'>
+                        <Pagination value={filteredPokemonData.length} />
+                    </div>
             <div className='container'>
                 <div className='row'>
-                    {filteredPokemonData.slice(0, 15).map((obj, index) => {
+                    {filteredPokemonData.slice(pagination.min, pagination.max).map((obj, index) => {
                         const pokemonNumber = (obj.number).toString().padStart(3, '0')
                         return (
                             <div key={index} className='col-sm-12 pokemon-box' onClick={() => { updatePokemonSelection(obj.name) }}>
@@ -44,6 +51,9 @@ const PokemonSelector = () => {
                             </div>
                         )
                     })}
+                    <div className='m-3'>
+                        <Pagination value={filteredPokemonData.length} />
+                    </div>
                 </div>
             </div>
         </>

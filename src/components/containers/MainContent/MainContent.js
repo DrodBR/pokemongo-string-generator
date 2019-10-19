@@ -1,7 +1,7 @@
 import React from 'react'
 import DisplayString from './DisplayString'
 import Filters from './filters/Filters'
-import PokemonSelector from './filters/PokemonSelector'
+import PokemonSelector from './filters/PokemonSelector/PokemonSelector'
 
 const MainContent = () => {
 
