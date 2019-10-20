@@ -39,10 +39,10 @@ const Pagination = (props) => {
             <nav aria-label="Page navigation example">
                 <ul className="pagination">
                     <li className="page-item" id='previousPage'><button className="page-link" onClick={previousPage}>Previous</button></li>
+                    <li className="page-item disabled"><button className="page-link" onClick={nextPage}>{`${pagination.max / 10} of ${Math.ceil(props.filteredLength / 10)}`}</button></li>
                     <li className="page-item" id='nextPage'><button className="page-link" onClick={nextPage}>Next</button></li>
                 </ul>
             </nav>
-            {Math.ceil(props.filteredLength / 10)}
         </>
     )
     return content
