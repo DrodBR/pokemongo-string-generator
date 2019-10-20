@@ -1,10 +1,14 @@
-button {
+button.filters {
     color: white !important;
     margin: 3px;
     line-height: 1 !important;
     font-weight: 600 !important;
     font-style: italic;
     opacity: .4;
+}
+
+button.pagination {
+
 }
 
 div.string-container {

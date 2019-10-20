@@ -28,7 +28,7 @@ const Type = () => {
         <>
             <h2>Type</h2>
             {allTypes.map((obj, index) => {
-                return <button key={index} className={`btn btn-sm ${obj}`} id={`button-${obj}`} value={obj} onClick={updateType}>{obj.toUpperCase()}</button>
+                return <button key={index} className={`btn btn-sm filters ${obj}`} id={`button-${obj}`} value={obj} onClick={updateType}>{obj.toUpperCase()}</button>
             })}
             <div className="custom-control custom-switch m-1">
                 <input className="custom-control-input" type="checkbox" id="typeSeparator" onClick={(e) => { updateTypesSeparator(e) }} />
