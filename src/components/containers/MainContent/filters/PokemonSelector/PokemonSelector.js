@@ -25,13 +25,16 @@ const PokemonSelector = () => {
 
     const content = (
         <>
-            <h1>Pokémon</h1>
-            <input type='text' className='form-control' placeholder='search by name...' value={searchString} onChange={e => setSearchString(e.target.value)} />
-
-            <div className='m-3'>
-                <Pagination filteredLength={filteredPokemonData.length} string={searchString} />
-            </div>
             <div className='container'>
+                <div className='row'>
+                    <h1>Pokémon</h1>
+                </div>
+                <div className='row'>
+                    <input type='text' className='form-control' placeholder='search by name...' value={searchString} onChange={e => setSearchString(e.target.value)} />
+                </div>
+                <div className='d-flex flex-row-reverse mt-4'>
+                    <Pagination filteredLength={filteredPokemonData.length} string={searchString} />
+                </div>
                 <div className='row'>
                     {filteredPokemonData.slice(pagination.min, pagination.max).map((obj, index) => {
                         const pokemonNumber = (obj.number).toString().padStart(3, '0')
