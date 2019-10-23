@@ -11,10 +11,10 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a className="nav-link" href="https://github.com/DrodBR/pokemongo-string-generator" rel="noopener noreferrer" target="_blank">GitHub</a>
+                            <a className="nav-link" href="https://github.com/DrodBR/pokemongo-string-generator" rel="noopener noreferrer" target="_blank"><i class="fab fa-github-square"></i> @DrodBR</a>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="https://www.linkedin.com/in/danielfgrodrigues/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                            <a className="nav-link" href="https://www.linkedin.com/in/danielfgrodrigues/" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i> /danielfgrodrigues</a>
                         </li>
                     </ul>
                 </div>
