@@ -1,10 +1,20 @@
 @import 'types.scss';
+@import 'colors.scss';
+
+@each $color in $color-combination1 {
+    $i: index($color-combination1, $color);
+    .main-bg-#{$i} {
+        background-color: nth($color-combination1, $i );
+        color: nth($color-combination2, $i)
+    }
+}
 
 @each $type, $color in $types {
     .#{$type} {
         background-color: #{$color};
     }
 }
+
 
 button.filters {
     color: white !important;

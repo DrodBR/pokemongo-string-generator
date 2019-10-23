@@ -6,8 +6,8 @@ import PokemonSelector from './filters/PokemonSelector/PokemonSelector'
 const MainContent = () => {
 
     const content = (
-        <div className='bg-dark'>
-            <div className='container text-light'>
+        <div className='main-bg-2'>
+            <div className='container'>
                 <DisplayString />
                 <div className='row'>
                     <div className='col-sm-3 mt-5'>
