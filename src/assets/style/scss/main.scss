@@ -55,7 +55,7 @@ span.font-inner-shadow {
             background-clip: text;
 }
 
-span.capitalize {
+.capitalize {
     text-transform: capitalize;
 }
 
@@ -89,7 +89,7 @@ div.pokemon-box {
 }
 
 div.pokemon-box:hover {
-    border: 3px dotted gray;
+    border: 3px dashed #{$color2};
 }
 
 .stars {

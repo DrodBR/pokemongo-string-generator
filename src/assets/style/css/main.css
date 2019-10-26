@@ -97,7 +97,7 @@ span.font-inner-shadow {
   -moz-background-clip: text;
   background-clip: text; }
 
-span.capitalize {
+.capitalize {
   text-transform: capitalize; }
 
 img.pokemon-thumb {
@@ -126,7 +126,7 @@ div.pokemon-box {
   border: 3px solid transparent; }
 
 div.pokemon-box:hover {
-  border: 3px dotted gray; }
+  border: 3px dashed #161b21; }
 
 .stars {
   opacity: 0.4; }

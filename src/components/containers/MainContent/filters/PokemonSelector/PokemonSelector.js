@@ -36,24 +36,29 @@ const PokemonSelector = () => {
                     <Pagination filteredLength={filteredPokemonData.length} string={searchString} />
                 </div>
                 <div className='row'>
-                    {filteredPokemonData.slice(pagination.min, pagination.max).map((obj, index) => {
-                        const pokemonNumber = (obj.number).toString().padStart(3, '0')
-                        return (
-                            <div key={index} className='col-sm-12 pokemon-box' onClick={() => { updatePokemonSelection(obj.number) }}>
-                                <div className='row'>
-                                    <div className='w-25 centralize'>
-                                        <img className='pokemon-thumb' alt={obj.name.toUpperCase()} src={obj.sprint} />
-                                    </div>
-                                    <div className='w-50 centralize'>
-                                        <span className='capitalize pokemon-name font-inner-shadow'>{obj.name}</span>
-                                    </div>
-                                    <div className='w-25 centralize'>
-                                        <span className='pokemon-number font-inner-shadow'>{`#${pokemonNumber}`}</span>
+                    {pokemonDB.length === 0 ?
+                        <span className='centralize'>Loading...</span> :
+                        filteredPokemonData.slice(pagination.min, pagination.max).map((obj, index) => {
+                            const pokemonNumber = (obj.number).toString().padStart(3, '0')
+                            return (
+                                <div key={index} className={`col-sm-12 pokemon-box ${obj.types[0]}`} onClick={() => { updatePokemonSelection(obj.number) }}>
+                                    <div className='row'>
+                                        <div className='w-25 centralize'>
+                                            <img className='pokemon-thumb' alt={obj.name.toUpperCase()} src={obj.sprint} />
+                                        </div>
+                                        <div className='w-50 centralize'>
+                                            <span className='capitalize pokemon-name font-inner-shadow'>{obj.name}</span>
+                                            {obj.types.map((obj, index) => {
+                                                return <div key={index} className='capitalize text-dark'>{obj}</div>
+                                            })}
+                                        </div>
+                                        <div className='w-25 centralize'>
+                                            <span className='pokemon-number font-inner-shadow'>{`#${pokemonNumber}`}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
                 </div>
             </div>
         </>
