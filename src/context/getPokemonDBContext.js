@@ -12,9 +12,10 @@ const GetPokemonDBContextProvider = props => {
             for (let i = 0; i < max; i++) {
                 const pokemonTypes = await fetch(`https://pokeapi.co/api/v2/pokemon/${i + 1}`)
                 const data = await pokemonTypes.json()
-                const types = data.types.map((obj) => obj.type.name)
-                const addOne = typesDB.push(types)
-                setTypesDB(addOne)
+                const newTypes = data.types.map((obj) => obj.type.name)
+                const deepCopy = typesDB
+                deepCopy.push(newTypes)
+                setTypesDB(deepCopy)
             }
         }
 
