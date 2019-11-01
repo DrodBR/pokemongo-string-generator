@@ -13,6 +13,7 @@ const GetPokemonDBContextProvider = props => {
                 const pokemonTypes = await fetch(`https://pokeapi.co/api/v2/pokemon/${i + 1}`)
                 const data = await pokemonTypes.json()
                 const newTypes = data.types.map((obj) => obj.type.name)
+                console.log(i)
                 const deepCopy = typesDB
                 deepCopy.push(newTypes)
                 setTypesDB(deepCopy)
@@ -20,7 +21,7 @@ const GetPokemonDBContextProvider = props => {
         }
 
         const fetchData = async () => {
-            const maxPokemon = 580; // max: 580
+            const maxPokemon = 151; // max: 580
 
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${maxPokemon}`)
             const data = await response.json()

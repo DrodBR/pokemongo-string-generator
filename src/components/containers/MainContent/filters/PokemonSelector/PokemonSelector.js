@@ -47,10 +47,16 @@ const PokemonSelector = () => {
                                             <img className='pokemon-thumb' alt={obj.name.toUpperCase()} src={obj.sprint} />
                                         </div>
                                         <div className='w-50 centralize'>
-                                            <span className='capitalize pokemon-name font-inner-shadow'>{obj.name}</span>
-                                            {obj.types.map((obj, index) => {
-                                                return <div key={index} className='capitalize text-dark'>{obj}</div>
-                                            })}
+                                            <div className='row'>
+                                                <span className='capitalize pokemon-name font-inner-shadow'>{obj.name}</span>
+                                            </div>
+                                            <div className='row'>
+                                                {obj.types.map((obj, index) => {
+                                                    return <div className='col'>
+                                                        <div key={index} className='capitalize text-dark'>{obj}</div>
+                                                    </div>
+                                                })}
+                                            </div>
                                         </div>
                                         <div className='w-25 centralize'>
                                             <span className='pokemon-number font-inner-shadow'>{`#${pokemonNumber}`}</span>
