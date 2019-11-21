@@ -1,8 +1,8 @@
-## Description
-Intuitive and responsive string generator to fetch pokemon in POKEMON GO game more easily.
+## App description
+Well-designed web app that generates a string for efficient searching in the database of the Pokémon Go app. Providing a great user experience, select the filters to target the desired group of characters, and then run the generated string in your game. Information fetched on a public API, which has the list and details of the characters.
 
-## SCREEN
-![alt text](https://i.ibb.co/X4pg55F/pk-print.png)
+## Screenshot
+![image](https://i.ibb.co/3rfwMps/pokemongostring.png)
 
 ## Built with
 * [React.js (w/ Hooks)](https://reactjs.org/) - Framework
